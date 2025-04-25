@@ -1,5 +1,3 @@
-// console.log('Welcome')
-let player = 'x'
 const board = document.querySelector('.board')
 
 for (let i = 1; i < 42; i++) {
@@ -8,12 +6,23 @@ for (let i = 1; i < 42; i++) {
   board.appendChild(cell)
 }
 
+let currentPlayer = 'red'
 const cells = document.querySelectorAll('.cell')
+const message = document.getElementById('message')
 
 for (let i = 0; i < cells.length; i++) {
   cells[i].addEventListener('click', () => {
-    if (cells[i].innerText === '') {
-      cells[i].style.backgroundColor = 'red'
+    // console.log(' clicked cell index:', i)
+    if (cells[i].style.backgroundColor === '') {
+      if (currentPlayer === 'red') {
+        cells[i].style.backgroundColor = 'red'
+        currentPlayer = 'yellow'
+        message.innerText = "Player Yellow's turn"
+      } else {
+        cells[i].style.backgroundColor = 'yellow'
+        currentPlayer = 'red'
+        message.innerText = "Player Red's turn"
+      }
     }
   })
 }

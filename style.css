@@ -1,5 +1,14 @@
 body {
-  background-color: rgb(31, 29, 29);
+  background-color: rgb(26, 24, 24);
+}
+#title {
+  color: rgb(30, 0, 255);
+  text-align: center;
+}
+#message {
+  /* background-color: red; */
+  color: red;
+  text-align: center;
 }
 
 .board {
@@ -13,7 +22,7 @@ body {
 .cell {
   width: 70px;
   height: 70px;
-  background-color: blue;
+  background-color: rgb(239, 239, 249);
   border-radius: 50%;
   border: 2px solid red;
 }
