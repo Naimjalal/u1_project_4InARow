@@ -4,17 +4,23 @@ body {
 #title {
   color: rgb(30, 0, 255);
   text-align: center;
+  border: 3px solid white;
 }
 #message {
   /* background-color: red; */
-  color: red;
+  /* display: inline-block; */
+
   text-align: center;
+  color: red;
+  border: 3px solid white;
+  padding: 2px 10px 9px 2px;
+  margin: auto;
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(7, 60px);
-  grid-template-rows: repeat(6, 60px);
+  grid-template-columns: 60px 60px 60px 60px 60px 60px 60px;
+  grid-template-rows: 60px 60px 60px 60px 60px 60px;
   gap: 20px;
   justify-content: center;
   margin: 90px;

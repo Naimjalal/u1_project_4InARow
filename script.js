@@ -22,7 +22,7 @@ const coloumnPatterns = [
 
 for (let i = 0; i < cells.length; i++) {
   cells[i].addEventListener('click', () => {
-    //console.log(' clicked cell index:', i)
+    console.log(' clicked cell index:', i)
     const column = i % 7
     const columnIndexes = coloumnPatterns[column]
 
@@ -41,6 +41,7 @@ for (let i = 0; i < cells.length; i++) {
           message.innerText = "Player Red's turn"
           message.style.color = 'red'
         }
+        // checkWinner()
         break
       }
     }
