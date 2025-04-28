@@ -10,7 +10,7 @@ for (let i = 1; i < 42; i++) {
 
 const cells = document.querySelectorAll('.cell')
 
-const coloumnPatterns = [
+const columnPatterns = [
   [35, 28, 21, 14, 7, 0],
   [36, 29, 22, 15, 8, 1],
   [37, 30, 23, 16, 9, 2],
@@ -21,18 +21,24 @@ const coloumnPatterns = [
 ]
 
 const checkWinner = () => {
-  for (let i = 0; i < coloumnPatterns.length; i++) {
-    // for(let j =0; j < column.length; i++)
-    const a = column[j]
-    const b = column[j + 1]
-    const c = column[j + 2]
+  for (let i = 0; i < columnPatterns.length; i++) {
+    {
+      const column = columnPatterns[i]
+      for (let j = 0; j < column.length - 3; j++) {
+        const a = column[j]
+        const b = column[j + 1]
+        const c = column[j + 2]
+        const d = column[j + 3]
 
-    if (
-      cells[a].style.backgroundColor !== '' &&
-      cells[a].style.backgroundColor === cells[b].style.backgroundColor &&
-      cells[a].style.backgroundColor === cells[c].style.backgroundColor
-    ) {
-      console.log('winner')
+        if (
+          cells[a].style.backgroundColor !== '' &&
+          cells[a].style.backgroundColor === cells[b].style.backgroundColor &&
+          cells[a].style.backgroundColor === cells[c].style.backgroundColor &&
+          cells[a].style.backgroundColor === cells[d].style.backgroundColor
+        ) {
+          console.log('winner')
+        }
+      }
     }
   }
 }
@@ -41,7 +47,7 @@ for (let i = 0; i < cells.length; i++) {
   cells[i].addEventListener('click', () => {
     console.log(' clicked cell index:', i)
     const column = i % 7
-    const columnIndexes = coloumnPatterns[column]
+    const columnIndexes = columnPatterns[column]
 
     for (let j = 0; j < columnIndexes.length; j++) {
       const index = columnIndexes[j]
@@ -59,6 +65,7 @@ for (let i = 0; i < cells.length; i++) {
           message.style.color = 'red'
         }
 
+        checkWinner()
         break
       }
     }
