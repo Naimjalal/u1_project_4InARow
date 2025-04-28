@@ -24,36 +24,60 @@ const columnPatterns = [
 
 const checkWinner = () => {
   for (let i = 0; i < columnPatterns.length; i++) {
-    {
-      const column = columnPatterns[i]
-      for (let j = 0; j < column.length - 3; j++) {
-        const a = column[j]
-        const b = column[j + 1]
-        const c = column[j + 2]
-        const d = column[j + 3]
+    const column = columnPatterns[i]
+    for (let j = 0; j < column.length - 3; j++) {
+      const a = column[j]
+      const b = column[j + 1]
+      const c = column[j + 2]
+      const d = column[j + 3]
 
-        if (
-          cells[a].style.backgroundColor !== '' &&
-          cells[a].style.backgroundColor === cells[b].style.backgroundColor &&
-          cells[a].style.backgroundColor === cells[c].style.backgroundColor &&
-          cells[a].style.backgroundColor === cells[d].style.backgroundColor
-        ) {
-          if (cells[a].style.backgroundColor === 'red') {
-            message.innerText = 'Congratulations Player Red Wins'
-            message.style.color = 'Red'
-            gameOver = true
-            return
-          } else {
-            message.innerText = ' Congratulations Player Yellow Wins'
-            message.style.color = 'yellow'
-            gameOver = true
-            return
-          }
+      if (
+        cells[a].style.backgroundColor !== '' &&
+        cells[a].style.backgroundColor === cells[b].style.backgroundColor &&
+        cells[a].style.backgroundColor === cells[c].style.backgroundColor &&
+        cells[a].style.backgroundColor === cells[d].style.backgroundColor
+      ) {
+        if (cells[a].style.backgroundColor === 'red') {
+          message.innerText = 'Congratulations Player Red Wins'
+          message.style.color = 'Red'
+          gameOver = true
+          return
+        } else {
+          message.innerText = ' Congratulations Player Yellow Wins'
+          message.style.color = 'yellow'
+          gameOver = true
+          return
         }
       }
     }
   }
+  for (let i = 0; i <= 20; i++) {
+    const a = i
+    const b = i + 7
+    const c = i + 14
+    const d = i + 21
+
+    if (
+      cells[a].style.backgroundColor !== '' &&
+      cells[a].style.backgroundColor === cells[b].style.backgroundColor &&
+      cells[a].style.backgroundColor === cells[c].style.backgroundColor &&
+      cells[a].style.backgroundColor === cells[d].style.backgroundColor
+    ) {
+      if (cells[a].style.backgroundColor === 'red') {
+        message.innerText = 'Congratulations Player Red Wins'
+        message.style.color = 'Red'
+        gameOver = true
+        return
+      } else {
+        message.innerText = ' Congratulations Player Yellow Wins'
+        message.style.color = 'yellow'
+        gameOver = true
+        return
+      }
+    }
+  }
 }
+
 const resetGame = () => {
   for (let i = 0; i < cells.length; i++) {
     cells[i].style.backgroundColor = ''
