@@ -1,5 +1,6 @@
 const board = document.querySelector('.board')
 const message = document.getElementById('message')
+const resetButton = document.getElementById('resetButton')
 let currentPlayer = 'red'
 let gameOver = false
 
@@ -55,11 +56,12 @@ const checkWinner = () => {
 }
 const resetGame = () => {
   for (let i = 0; i < cells.length; i++) {
-    cells[i].innerText = ''
+    cells[i].style.backgroundColor = ''
   }
   currentPlayer = 'red'
   gameOver = false
-  message = "Player Red's turn"
+  message.innerText = "Player Red's turn"
+  message.style.color = 'red'
 }
 
 for (let i = 0; i < cells.length; i++) {
