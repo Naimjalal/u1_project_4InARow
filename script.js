@@ -1,6 +1,7 @@
 const board = document.querySelector('.board')
 const message = document.getElementById('message')
 let currentPlayer = 'red'
+let gameOver = false
 
 for (let i = 1; i < 42; i++) {
   const cell = document.createElement('div')
@@ -39,9 +40,13 @@ const checkWinner = () => {
           if (cells[a].style.backgroundColor === 'red') {
             message.innerText = 'Congratulations Player Red Wins'
             message.style.color = 'Red'
+            gameOver = true
+            return
           } else {
             message.innerText = ' Congratulations Player Yellow Wins'
             message.style.color = 'yellow'
+            gameOver = true
+            return
           }
         }
       }
@@ -58,7 +63,7 @@ for (let i = 0; i < cells.length; i++) {
     for (let j = 0; j < columnIndexes.length; j++) {
       const index = columnIndexes[j]
 
-      if (cells[index].style.backgroundColor === '') {
+      if (cells[index].style.backgroundColor === '' && !gameOver) {
         if (currentPlayer === 'red') {
           cells[index].style.backgroundColor = 'red'
           currentPlayer = 'yellow'
