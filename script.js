@@ -36,7 +36,13 @@ const checkWinner = () => {
           cells[a].style.backgroundColor === cells[c].style.backgroundColor &&
           cells[a].style.backgroundColor === cells[d].style.backgroundColor
         ) {
-          console.log('winner')
+          if (cells[a].style.backgroundColor === 'red') {
+            message.innerText = 'Congratulations Player Red Wins'
+            message.style.color = 'Red'
+          } else {
+            message.innerText = ' Congratulations Player Yellow Wins'
+            message.style.color = 'yellow'
+          }
         }
       }
     }
