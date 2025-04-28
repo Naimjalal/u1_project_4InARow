@@ -20,6 +20,23 @@ const coloumnPatterns = [
   [41, 34, 27, 20, 13, 6]
 ]
 
+const checkWinner = () => {
+  for (let i = 0; i < coloumnPatterns.length; i++) {
+    // for(let j =0; j < column.length; i++)
+    const a = column[j]
+    const b = column[j + 1]
+    const c = column[j + 2]
+
+    if (
+      cells[a].style.backgroundColor !== '' &&
+      cells[a].style.backgroundColor === cells[b].style.backgroundColor &&
+      cells[a].style.backgroundColor === cells[c].style.backgroundColor
+    ) {
+      console.log('winner')
+    }
+  }
+}
+
 for (let i = 0; i < cells.length; i++) {
   cells[i].addEventListener('click', () => {
     console.log(' clicked cell index:', i)
@@ -41,7 +58,7 @@ for (let i = 0; i < cells.length; i++) {
           message.innerText = "Player Red's turn"
           message.style.color = 'red'
         }
-        // checkWinner()
+
         break
       }
     }
