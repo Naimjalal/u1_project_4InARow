@@ -51,33 +51,43 @@ const checkWinner = () => {
       }
     }
   }
-  for (let i = 0; i <= 20; i++) {
-    const a = i
-    const b = i + 7
-    const c = i + 14
-    const d = i + 21
+  const verticalPatterns = [
+    [35, 36, 37, 38, 39, 40, 41],
+    [28, 29, 30, 31, 32, 33, 34],
+    [21, 22, 23, 24, 25, 26, 27],
+    [14, 15, 16, 17, 18, 19, 20],
+    [7, 8, 9, 10, 11, 12, 13],
+    [0, 1, 2, 3, 4, 5, 6]
+  ]
+  for (let i = 0; i < verticalPatterns.length; i++) {
+    const column = verticalPatterns[i]
+    for (let j = 0; j < column.length - 3; j++) {
+      const a = column[j]
+      const b = column[j + 1]
+      const c = column[j + 2]
+      const d = column[j + 3]
 
-    if (
-      cells[a].style.backgroundColor !== '' &&
-      cells[a].style.backgroundColor === cells[b].style.backgroundColor &&
-      cells[a].style.backgroundColor === cells[c].style.backgroundColor &&
-      cells[a].style.backgroundColor === cells[d].style.backgroundColor
-    ) {
-      if (cells[a].style.backgroundColor === 'red') {
-        message.innerText = 'Congratulations Player Red Wins'
-        message.style.color = 'Red'
-        gameOver = true
-        return
-      } else {
-        message.innerText = ' Congratulations Player Yellow Wins'
-        message.style.color = 'yellow'
-        gameOver = true
-        return
+      if (
+        cells[a].style.backgroundColor !== '' &&
+        cells[a].style.backgroundColor === cells[b].style.backgroundColor &&
+        cells[a].style.backgroundColor === cells[c].style.backgroundColor &&
+        cells[a].style.backgroundColor === cells[d].style.backgroundColor
+      ) {
+        if (cells[a].style.backgroundColor === 'red') {
+          message.innerText = 'Congratulations Player Red Wins'
+          message.style.color = 'Red'
+          gameOver = true
+          return
+        } else {
+          message.innerText = ' Congratulations Player Yellow Wins'
+          message.style.color = 'yellow'
+          gameOver = true
+          return
+        }
       }
     }
   }
 }
-
 const resetGame = () => {
   for (let i = 0; i < cells.length; i++) {
     cells[i].style.backgroundColor = ''
@@ -116,4 +126,5 @@ for (let i = 0; i < cells.length; i++) {
     }
   })
 }
+
 resetButton.addEventListener('click', resetGame)
