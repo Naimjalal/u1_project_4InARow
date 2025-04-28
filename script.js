@@ -53,6 +53,14 @@ const checkWinner = () => {
     }
   }
 }
+const resetGame = () => {
+  for (let i = 0; i < cells.length; i++) {
+    cells[i].innerText = ''
+  }
+  currentPlayer = 'red'
+  gameOver = false
+  message = "Player Red's turn"
+}
 
 for (let i = 0; i < cells.length; i++) {
   cells[i].addEventListener('click', () => {
@@ -82,3 +90,4 @@ for (let i = 0; i < cells.length; i++) {
     }
   })
 }
+resetButton.addEventListener('click', resetGame)

@@ -1,5 +1,6 @@
 body {
   background-color: rgb(26, 24, 24);
+  text-align: center;
 }
 #title {
   color: rgb(30, 0, 255);
@@ -31,4 +32,11 @@ body {
   background-color: rgb(239, 239, 249);
   border-radius: 50%;
   border: 2px solid red;
+}
+
+#reset {
+  background-color: blue;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 10px;
 }
