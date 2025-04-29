@@ -183,7 +183,6 @@ const resetGame = () => {
 //Event listener
 for (let i = 0; i < cells.length; i++) {
   cells[i].addEventListener('click', () => {
-    console.log(' clicked cell index:', i)
     const column = i % 7
     const columnIndexes = columnPatterns[column]
 
