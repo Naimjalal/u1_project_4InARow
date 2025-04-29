@@ -1,4 +1,4 @@
-![4 In a Row](IMAGES/4CONNECT.JPG)
+![4 In a Row](IMAGES/4CONNECT.jpg)
 
 # 4 In a Row
 
@@ -27,7 +27,7 @@
 
 ##### Start by player Red. The goal is to connect 4 discs of the same color either horizontally, vertically, or diagonally before opponent does.
 
-##### The project was deployed on Surge and can be viewed [here](https://).
+##### The project was deployed on Surge and can be viewed [here](https://https://4inarow.surge.sh/).
 
 ---
 
