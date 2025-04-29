@@ -51,7 +51,7 @@ const checkWinner = () => {
       }
     }
   }
-  const verticalPatterns = [
+  const horizontalPatterns = [
     [35, 36, 37, 38, 39, 40, 41],
     [28, 29, 30, 31, 32, 33, 34],
     [21, 22, 23, 24, 25, 26, 27],
@@ -59,8 +59,8 @@ const checkWinner = () => {
     [7, 8, 9, 10, 11, 12, 13],
     [0, 1, 2, 3, 4, 5, 6]
   ]
-  for (let i = 0; i < verticalPatterns.length; i++) {
-    const column = verticalPatterns[i]
+  for (let i = 0; i < horizontalPatterns.length; i++) {
+    const column = horizontalPatterns[i]
     for (let j = 0; j < column.length - 3; j++) {
       const a = column[j]
       const b = column[j + 1]
@@ -87,7 +87,43 @@ const checkWinner = () => {
       }
     }
   }
+  const diagonalPatterns = [
+    [0, 8, 16, 24],
+    [1, 9, 17, 25],
+    [2, 10, 18, 26],
+    [3, 11, 19, 27],
+    [7, 15, 23, 31],
+    [8, 16, 24, 32],
+    [9, 17, 25, 33],
+    [10, 18, 26, 34],
+    [14, 22, 30, 38],
+    [15, 23, 31, 39],
+    [16, 24, 32, 40],
+    [17, 25, 33, 41]
+  ]
+  for (let i = 0; i < diagonalPatterns.length; i++) {
+    const [a, b, c, d] = diagonalPatterns[i]
+    if (
+      cells[a].style.backgroundColor !== '' &&
+      cells[a].style.backgroundColor === cells[b].style.backgroundColor &&
+      cells[a].style.backgroundColor === cells[c].style.backgroundColor &&
+      cells[a].style.backgroundColor === cells[d].style.backgroundColor
+    ) {
+      if (cells[a].style.backgroundColor === 'red') {
+        message.innerText = 'Congratulations Player Red Wins'
+        message.style.color = 'Red'
+        gameOver = true
+        return
+      } else {
+        message.innerText = ' Congratulations Player Yellow Wins'
+        message.style.color = 'yellow'
+        gameOver = true
+        return
+      }
+    }
+  }
 }
+
 const resetGame = () => {
   for (let i = 0; i < cells.length; i++) {
     cells[i].style.backgroundColor = ''
@@ -97,7 +133,7 @@ const resetGame = () => {
   message.innerText = "Player Red's turn"
   message.style.color = 'red'
 }
-
+//Event listener
 for (let i = 0; i < cells.length; i++) {
   cells[i].addEventListener('click', () => {
     console.log(' clicked cell index:', i)
