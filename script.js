@@ -122,8 +122,42 @@ const checkWinner = () => {
       }
     }
   }
+  const diagonalOppositePatterns = [
+    [3, 9, 15, 21],
+    [4, 10, 16, 22],
+    [5, 11, 17, 23],
+    [6, 12, 18, 24],
+    [10, 16, 22, 28],
+    [11, 17, 23, 29],
+    [12, 18, 24, 30],
+    [13, 19, 25, 31],
+    [17, 23, 29, 35],
+    [18, 24, 30, 36],
+    [19, 25, 31, 37],
+    [20, 26, 32, 39]
+  ]
+  for (let i = 0; i < diagonalOppositePatterns.length; i++) {
+    const [a, b, c, d] = diagonalOppositePatterns[i]
+    if (
+      cells[a].style.backgroundColor !== '' &&
+      cells[a].style.backgroundColor === cells[b].style.backgroundColor &&
+      cells[a].style.backgroundColor === cells[c].style.backgroundColor &&
+      cells[a].style.backgroundColor === cells[d].style.backgroundColor
+    ) {
+      if (cells[a].style.backgroundColor === 'red') {
+        message.innerText = 'Congratulations Player Red Wins'
+        message.style.color = 'Red'
+        gameOver = true
+        return
+      } else {
+        message.innerText = ' Congratulations Player Yellow Wins'
+        message.style.color = 'yellow'
+        gameOver = true
+        return
+      }
+    }
+  }
 }
-
 const resetGame = () => {
   for (let i = 0; i < cells.length; i++) {
     cells[i].style.backgroundColor = ''
