@@ -157,7 +157,20 @@ const checkWinner = () => {
       }
     }
   }
+  let boardFull = true
+  for (let i = 0; i < cells.length; i++) {
+    if (cells[i].style.backgroundColor === '') {
+      boardFull = false
+      break
+    }
+  }
+  if (boardFull && !gameOver) {
+    message.innerText = 'Its a tie'
+    message.style.color = 'red'
+    gameOver = true
+  }
 }
+
 const resetGame = () => {
   for (let i = 0; i < cells.length; i++) {
     cells[i].style.backgroundColor = ''
