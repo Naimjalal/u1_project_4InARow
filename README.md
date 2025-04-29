@@ -1,4 +1,4 @@
-![4 In a Row](images/4CONNECT.JPG)
+![4 In a Row](IMAGES/4CONNECT.JPG)
 
 # 4 In a Row
 
@@ -12,7 +12,7 @@
 
 #### **_Description_**
 
-**4 in a row** is a fun classic two-player strategy game where the the goal is to be the first to form a line of _four_ of your same colored discs either **vertically, horizontally, or diagonally**.
+##### **4 in a row** is a fun classic two-player strategy game where the the goal is to be the first to form a line of _four_ of your same colored discs either **vertically, horizontally, or diagonally**.
 
 ---
 
@@ -33,7 +33,7 @@
 
 ### **_Screenshots_**
 
-![4 In a Row](images/Screenshot%20.png)
+![4 In a Row](IMAGES/Screenshot%20.png)
 
 ---
 
