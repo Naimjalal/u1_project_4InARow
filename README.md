@@ -27,7 +27,7 @@
 
 ##### Start by player Red. The goal is to connect 4 discs of the same color either horizontally, vertically, or diagonally before opponent does.
 
-##### The project was deployed on Surge and can be viewed [here](https://https://4inarow.surge.sh/).
+##### The project was deployed on Surge and can be viewed [here](https://4inarow.surge.sh/).
 
 ---
 

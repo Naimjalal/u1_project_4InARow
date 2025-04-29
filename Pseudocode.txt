@@ -1,0 +1,37 @@
+#### **_Pseudocode_**
+
+**Board Setup**
+
+- Create 6 rows by 7 columns grid.
+- Each cells should be empty before start.
+
+**Handle Logics**
+
+- On clicking a column Find the most bottom empty row in that column.
+- Drop the current Player piece into that cell.
+- check for this move wins the game or causes the draw.
+- if not switch to another player.
+
+**Check for win**
+
+- Check for 4 in a row:
+- Horizontal
+- Vertical
+- Diagonal(both directions)
+- if found:
+- Declare the current player as winner
+
+**Check for Draw**
+
+- if board is full and no winner.
+
+- Declare "its a draw"
+
+**Switch Player**
+
+- if no win or draw switch to player 2
+
+**Restart Game**
+
+- clear board
+- Reset the current player to Player 1 (Red)
