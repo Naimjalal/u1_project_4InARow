@@ -39,12 +39,12 @@ const checkWinner = () => {
       ) {
         if (cells[a].style.backgroundColor === 'red') {
           message.innerText = 'Congratulations Player Red Wins'
-          message.style.color = 'Red'
+          message.style.color = 'blue'
           gameOver = true
           return
         } else {
           message.innerText = ' Congratulations Player Yellow Wins'
-          message.style.color = 'yellow'
+          message.style.color = 'blue'
           gameOver = true
           return
         }
@@ -75,12 +75,12 @@ const checkWinner = () => {
       ) {
         if (cells[a].style.backgroundColor === 'red') {
           message.innerText = 'Congratulations Player Red Wins'
-          message.style.color = 'Red'
+          message.style.color = 'blue'
           gameOver = true
           return
         } else {
           message.innerText = ' Congratulations Player Yellow Wins'
-          message.style.color = 'yellow'
+          message.style.color = 'blue'
           gameOver = true
           return
         }
@@ -111,12 +111,12 @@ const checkWinner = () => {
     ) {
       if (cells[a].style.backgroundColor === 'red') {
         message.innerText = 'Congratulations Player Red Wins'
-        message.style.color = 'Red'
+        message.style.color = 'blue'
         gameOver = true
         return
       } else {
         message.innerText = ' Congratulations Player Yellow Wins'
-        message.style.color = 'yellow'
+        message.style.color = 'blue'
         gameOver = true
         return
       }
@@ -146,12 +146,12 @@ const checkWinner = () => {
     ) {
       if (cells[a].style.backgroundColor === 'red') {
         message.innerText = 'Congratulations Player Red Wins'
-        message.style.color = 'Red'
+        message.style.color = 'Blue'
         gameOver = true
         return
       } else {
         message.innerText = ' Congratulations Player Yellow Wins'
-        message.style.color = 'yellow'
+        message.style.color = 'Blue'
         gameOver = true
         return
       }
